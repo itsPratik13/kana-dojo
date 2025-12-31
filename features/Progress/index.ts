@@ -21,6 +21,61 @@ export type {
 export { default as ProgressWithSidebar } from './components/ProgressWithSidebar';
 export { default as SimpleProgress } from './components/SimpleProgress';
 
+// Stats Components (new revamped stats page)
+export {
+  StatsPage,
+  OverviewStatsCard,
+  CharacterMasteryPanel,
+  TimedModeStatsPanel,
+  GauntletStatsPanel,
+  MasteryDistributionChart,
+  AchievementSummaryBar,
+  getStatsOverviewDisplayValues,
+  getTopCharacters,
+  getTimedModeDisplayValues,
+  getGauntletDisplayValues,
+  getMasteryDistributionDisplayValues,
+  getAchievementDisplayValues
+} from './components/stats';
+export type {
+  StatsPageProps,
+  OverviewStatsCardProps,
+  CharacterMasteryPanelProps,
+  TimedModeStatsPanelProps,
+  GauntletStatsPanelProps,
+  MasteryDistributionChartProps,
+  AchievementSummaryBarProps
+} from './components/stats';
+
+// Hooks
+export {
+  useStatsAggregator,
+  calculateMasteryDistribution,
+  filterCharacterMasteryByType,
+  getTopDifficultCharacters,
+  getTopMasteredCharacters
+} from './hooks/useStatsAggregator';
+export type { StatsAggregatorState } from './hooks/useStatsAggregator';
+
+// Types
+export type {
+  ContentType,
+  ContentFilter,
+  MasteryLevel,
+  CharacterMasteryItem,
+  TimedModeStats,
+  GauntletOverallStats,
+  MasteryDistribution,
+  AchievementSummary,
+  AggregatedStats,
+  RawCharacterMastery
+} from './types/stats';
+
+// Utility functions
+export { classifyCharacter } from './lib/classifyCharacter';
+export { detectContentType } from './lib/detectContentType';
+export { calculateAccuracy } from './lib/calculateAccuracy';
+
 // ============================================================================
 // PRIVATE - DO NOT IMPORT DIRECTLY
 // ============================================================================
