@@ -1082,6 +1082,10 @@ const baseThemeSets: BaseThemeGroup[] = [
         secondaryColor: 'oklch(68.0% 0.205 30.0 / 1)',
       },
       {
+        id: 'soda-float',
+        backgroundColor: 'oklch(93.0% 0.032 150.0 / 1)',
+        mainColor: 'oklch(62.0% 0.175 155.0 / 1)',
+        secondaryColor: 'oklch(85.0% 0.095 95.0 / 1)'},{
         id: 'umbrella-rain',
         backgroundColor: 'oklch(22.0% 0.018 250.0 / 1)',
         mainColor: 'oklch(70.0% 0.175 225.0 / 1)',
