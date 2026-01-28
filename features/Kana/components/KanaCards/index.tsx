@@ -99,6 +99,8 @@ const KanaCards = ({ filter = 'all' }: { filter?: KanaCardsFilter }) => {
     return true;
   });
 
+  const isSingleGroup = filteredGroups.length === 1;
+
   const storageKey =
     filter === 'all' ? STORAGE_KEY : `${STORAGE_KEY}-${filter}`;
 
@@ -140,7 +142,8 @@ const KanaCards = ({ filter = 'all' }: { filter?: KanaCardsFilter }) => {
           <Fragment key={group.name}>
             <form
               className={clsx(
-                'flex w-full flex-col gap-2 p-4 sm:w-1/2',
+                'flex w-full flex-col gap-2 p-4',
+                isSingleGroup ? 'sm:w-full' : 'sm:w-1/2',
                 cardBorderStyles,
               )}
             >

@@ -16,9 +16,24 @@ const KanaMenu = ({ filter = 'all' }: { filter?: KanaMenuFilter }) => {
   const { addGroups: addKanaGroupIndices } = useKanaSelection();
   const { allGroups: kana } = useKanaContent();
 
+  const headerText =
+    filter === 'hiragana'
+      ? { label: 'Hiragana', char: 'ひ' }
+      : filter === 'katakana'
+        ? { label: 'Katakana', char: 'カ' }
+        : { label: 'Kana', char: 'あ' };
+
   return (
     <>
       <div className='flex flex-col gap-3'>
+        {filter !== 'all' && (
+          <div className='flex items-center gap-2 pt-1 text-2xl font-medium'>
+            <span className='text-3xl text-(--secondary-color)' lang='ja'>
+              {headerText.char}
+            </span>
+            <span className='text-(--main-color)'>{headerText.label}</span>
+          </div>
+        )}
         <Info />
         <ActionButton
           onClick={e => {
