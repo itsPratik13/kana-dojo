@@ -54,7 +54,7 @@ export default function StreakProgress() {
 
       {/* Period Selector */}
       <div className='flex justify-center'>
-        <div className='inline-flex gap-2 rounded-3xl border-0 border-[var(--border-color)] bg-[var(--card-color)] p-2'>
+        <div className='inline-flex gap-1 rounded-[22px] border border-[var(--border-color)] bg-[var(--card-color)] p-1.5'>
           {periodOptions.map(option => {
             const isSelected = period === option.value;
             const Icon = option.icon;
@@ -68,7 +68,7 @@ export default function StreakProgress() {
                 colorScheme={isSelected ? 'main' : undefined}
                 borderColorScheme={isSelected ? 'main' : undefined}
                 borderBottomThickness={isSelected ? 10 : 0}
-                borderRadius='3xl'
+                borderRadius='2xl'
                 className={
                   isSelected
                     ? 'w-auto px-5 py-2.5 text-sm'
