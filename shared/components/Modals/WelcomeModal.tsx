@@ -423,9 +423,23 @@ const WelcomeModal = () => {
 
                   return (
                     <div key={themeSet.name} className='space-y-3'>
-                      <div className='flex items-center gap-2 text-lg font-medium text-(--main-color)'>
-                        <themeSet.icon size={20} />
-                        {themeSet.name}
+                      <div className='flex items-center gap-2 text-lg font-medium'>
+                        <themeSet.icon
+                          size={20}
+                          className='text-(--secondary-color)'
+                        />
+                        {themeSet.name.startsWith('Premium') ? (
+                          <span>
+                            <span className='text-(--main-color)'>Premium</span>
+                            <span className='ml-1 text-(--secondary-color)'>
+                              (experimental)
+                            </span>
+                          </span>
+                        ) : (
+                          <span className='text-(--main-color)'>
+                            {themeSet.name}
+                          </span>
+                        )}
                         {/* <span className='text-sm font-normal text-(--secondary-color)'>
                       ({themeSet.themes.length})
                     </span> */}
