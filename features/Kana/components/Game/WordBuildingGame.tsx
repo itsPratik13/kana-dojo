@@ -165,7 +165,9 @@ const WordBuildingGame = ({
       romajiToKana,
     } = generateWordDeps;
     const sourceChars = isReverse ? selectedRomaji : selectedKana;
-    if (sourceChars.length < wordLength) {
+    const totalTileCount =
+      wordLength <= 1 ? 3 : wordLength === 2 ? 4 : 5;
+    if (sourceChars.length < totalTileCount) {
       return { wordChars: [], answerChars: [], allTiles: [] };
     }
 
@@ -186,7 +188,7 @@ const WordBuildingGame = ({
       ? wordChars.map(r => romajiToKana[r])
       : wordChars.map(k => kanaToRomaji[k]);
 
-    const distractorCount = Math.min(3, sourceChars.length - wordLength);
+    const distractorCount = Math.max(0, totalTileCount - answerChars.length);
     const distractorSource = isReverse ? selectedKana : selectedRomaji;
     const distractors: string[] = [];
     const usedAnswers = new Set(answerChars);
@@ -392,7 +394,11 @@ const WordBuildingGame = ({
   }, [isChecking, playClick]);
 
   // Not enough characters for word building
-  if (selectedKana.length < wordLength || wordData.wordChars.length === 0) {
+  const requiredTileCount = wordLength <= 1 ? 3 : wordLength === 2 ? 4 : 5;
+  if (
+    selectedKana.length < requiredTileCount ||
+    wordData.wordChars.length === 0
+  ) {
     return null;
   }
 
