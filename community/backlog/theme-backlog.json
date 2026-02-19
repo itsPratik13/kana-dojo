@@ -1017,7 +1017,9 @@
     "mainColor": "oklch(65.0% 0.180 350.0 / 1)",
     "secondaryColor": "oklch(72.0% 0.145 130.0 / 1)",
     "issued": true,
-    "completed": false
+    "completed": true,
+    "completedBy": "KimTram",
+    "completedPR": 5365
   },
   {
     "id": "shinto-portal",
