@@ -29,6 +29,12 @@ const CLICK_EFFECT_MANUAL_ORDER = [
   'snowflake',
   'fuji',
   'rice',
+  'sushi',
+  'ramen',
+  'castle',
+  'carp',
+  'kitsune',
+  'chopsticks',
 ] as const;
 
 const clickEffectById = new Map(CLICK_EFFECTS.map(effect => [effect.id, effect]));
@@ -161,7 +167,7 @@ const Effects = () => {
         defaultOpen={true}
         storageKey='prefs-effects-cursor'
       >
-        <fieldset className='grid grid-cols-4 gap-3 p-1 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7'>
+        <fieldset className='grid grid-cols-5 gap-3 p-1 sm:grid-cols-6 md:grid-cols-7 lg:grid-cols-8'>
           {CURSOR_TRAIL_EFFECTS.map(effect => (
             <EffectCard
               key={effect.id}
@@ -184,7 +190,7 @@ const Effects = () => {
         defaultOpen={true}
         storageKey='prefs-effects-click'
       >
-        <fieldset className='grid grid-cols-4 gap-3 p-1 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7'>
+        <fieldset className='grid grid-cols-5 gap-3 p-1 sm:grid-cols-6 md:grid-cols-7 lg:grid-cols-8'>
           {ORDERED_CLICK_EFFECTS.map(effect => (
             <EffectCard
               key={effect.id}
